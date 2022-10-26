@@ -1,11 +1,26 @@
-<p class="text-red-500">{{title}}</p>
+<div
+  class="text-[#3b3b3b] h-screen {{
+    darkMode ? 'dark bg-black text-[#c0c0c0]' : 'bg-[#dae0e6]'
+  }}"
+  (click)="closeDropDown($event)"
+>
+  <app-header [(openClose)]="openClose" [(darkMode)]="darkMode"></app-header>
 
-<button (click)="changeFetch('https://www.reddit.com/r/formula1/comments/ydl0jl.json')">change url</button>
+  <p class="text-red-500">{{ title }}</p>
 
-<ul class="heroes">
-  <li *ngFor="let post of posts">
-      <span >{{post.data.id}}</span>
-  </li>
-</ul>
+  <button
+    (click)="
+      changeFetch('https://www.reddit.com/r/formula1/comments/ydl0jl.json')
+    "
+  >
+    change url
+  </button>
+
+  <ul>
+    <li *ngFor="let post of posts">
+      <span>{{ post.data.id }}</span>
+    </li>
+  </ul>
+</div>
 
 <router-outlet></router-outlet>
