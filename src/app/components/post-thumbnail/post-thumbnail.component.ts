@@ -3,9 +3,12 @@ import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 import { post } from 'src/app/app.component';
 import { FetchAPIService } from 'src/app/services/fetch-api.service';
 
-interface comment {
+export interface comment {
   data: {
     body: string;
+    author: string;
+    score: number;
+    created: number;
   };
 }
 
@@ -31,13 +34,15 @@ export class PostThumbnailComponent implements OnInit {
   public setPostDetails() {
     this.openPost = true;
 
+    console.log('fire');
+
     const id = this.post.data.id;
     const subreddit = this.post.data.subreddit;
 
     const postUrl = `https://www.reddit.com/r/${subreddit}/comments/${id}.json`;
 
     this.fetchAPIService.getPosts(postUrl).subscribe((response: any) => {
-      console.log(response[0].data.children);
+      console.log(response[1].data.children);
 
       this.postComments = response[1].data.children;
     });

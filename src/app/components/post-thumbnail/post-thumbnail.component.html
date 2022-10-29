@@ -1,6 +1,14 @@
-<div (click)="setPostDetails()">
-  <app-post *ngIf="openPost" [post]="post" [thumbnail]="thumbnail"></app-post>
+<div>
+  <app-post
+    *ngIf="openPost"
+    [post]="post"
+    [thumbnail]="thumbnail"
+    [timeSincePost]="timeSincePost"
+    [postComments]="postComments"
+    [(openPost)]="openPost"
+  ></app-post>
   <div
+    (click)="setPostDetails()"
     class="mx-auto hover:border-[#808080] cursor-pointer dark:hover:border-[#888888] p-4 rounded-[4px] border border-[#bdbdbd] dark:border-[#505050] dark:bg-[#1a1a1b] my-2 sm:my-4 bg-white overflow-hidden"
   >
     <div class="flex items-center justify-start gap-2 mb-3">
