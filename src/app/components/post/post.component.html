@@ -1,0 +1,20 @@
+<div
+  class="fixed top-0 left-0 w-full h-screen z-50 flex items-start justify-center"
+>
+  <div class="relative z-50">
+    <p class="text-white">post works!</p>
+    <img
+      *ngIf="thumbnail && post.data.url.slice(-3) === 'jpg'"
+      class="h-auto w-[580px] object-cover rounded-sm"
+      src="{{ post.data.url }}"
+      alt="thumbnail"
+    />
+    <img
+      *ngIf="thumbnail && post.data.url.slice(-3) !== 'jpg'"
+      class="h-36 w-36 object-cover rounded-sm"
+      src="{{ post.data.thumbnail }}"
+      alt="thumbnail"
+    />
+  </div>
+  <div class="fixed top-0 left-0 w-full h-screen z-40 bg-[#00000073]"></div>
+</div>

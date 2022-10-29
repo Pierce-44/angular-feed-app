@@ -10,6 +10,7 @@ export interface post {
     num_comments: number;
     created: number;
     subreddit: string;
+    id: string;
   };
 }
 

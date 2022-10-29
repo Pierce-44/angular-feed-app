@@ -7,9 +7,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { PostThumbnailComponent } from './components/post-thumbnail/post-thumbnail.component';
 import { SuggestionTabComponent } from './components/suggestion-tab/suggestion-tab.component';
+import { PostComponent } from './components/post/post.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, PostThumbnailComponent, SuggestionTabComponent],
+  declarations: [AppComponent, HeaderComponent, PostThumbnailComponent, SuggestionTabComponent, PostComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
