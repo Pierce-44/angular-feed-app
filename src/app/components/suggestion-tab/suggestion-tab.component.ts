@@ -22,6 +22,12 @@ export class SuggestionTabComponent implements OnInit {
   @Input() posts: post[] | undefined;
   @Output() postsChange = new EventEmitter<post[]>();
 
+  @Input() filterFocus: string | undefined;
+  @Output() filterFocusChange = new EventEmitter<string>();
+
+  @Input() community: string | undefined;
+  @Output() communityChange = new EventEmitter<string>();
+
   newFetch(community: string) {}
 
   public getNewRoomPosts(community: string) {
@@ -32,6 +38,9 @@ export class SuggestionTabComponent implements OnInit {
 
       this.postsChange.emit(response.data.children);
     });
+
+    this.communityChange.emit(community);
+    this.filterFocusChange.emit('hot');
   }
 
   constructor(private fetchAPIService: FetchAPIService) {}

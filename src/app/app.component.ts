@@ -22,16 +22,25 @@ export class AppComponent {
   title = 'hello world';
   community = 'todayilearned';
   posts!: post[];
-  // url = 'https://www.reddit.com/r/formula1/hot.json?limit=25';
   url = `https://www.reddit.com/r/${this.community}/hot.json?limit=25`;
   openClose = false;
   darkMode = false;
+  filterFocus = 'hot';
 
   constructor(private fetchAPIService: FetchAPIService) {}
 
   public closeDropDown(event: any) {
     if (event.target.id === 'headerDropDown') return;
     this.openClose = false;
+  }
+
+  public setPosts(filter: string) {
+    const newUrl = `https://www.reddit.com/r/${this.community}/${filter}.json?limit=25`;
+
+    this.filterFocus = filter;
+    this.fetchAPIService.getPosts(newUrl).subscribe((response: any) => {
+      this.posts = response.data.children;
+    });
   }
 
   ngOnInit() {
