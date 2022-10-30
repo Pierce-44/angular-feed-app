@@ -3,7 +3,7 @@
 >
   <button
     (click)="closePost()"
-    class="fixed top-14 right-20 bg-white z-50 p-1 rounded-full"
+    class="fixed lg:top-14 lg:right-20 bg-gray-300 lg:bg-white dark:bg-[#000] dark:lg:bg-[#1a1a1b] z-[100] p-1 rounded-full border-black border lg:border-none"
   >
     <svg
       fill="none"
@@ -19,8 +19,10 @@
       />
     </svg>
   </button>
-  <div class="max-w-[740px] w-full bg-white relative z-50 my-5 rounded-md p-4">
-    <div class="flex items-center gap-1 justify-start mb-4">
+  <div
+    class="max-w-[740px] w-full bg-white dark:bg-[#1a1a1b] relative z-50 my-5 rounded-md p-4"
+  >
+    <div class="flex items-center gap-1 justify-start mb-4 flex-wrap">
       <svg class="h-8 w-8" viewBox="0 0 20 20">
         <g>
           <circle fill="#FF4500" cx="10" cy="10" r="10"></circle>
@@ -38,7 +40,7 @@
       class="flex gap-2 {{
         post.data.url.slice(-3) === 'jpg'
           ? 'flex-col'
-          : 'flex-row justify-between'
+          : 'lg:flex-row justify-between flex-col '
       }}"
     >
       <p class="font-semibold">{{ post.data.title }}</p>
@@ -50,7 +52,7 @@
       />
       <img
         *ngIf="thumbnail && post.data.url.slice(-3) !== 'jpg'"
-        class="h-36 w-36 object-cover rounded-sm"
+        class="h-36 w-36 object-cover rounded-sm lg:mx-0 mx-auto"
         src="{{ post.data.thumbnail }}"
         alt="thumbnail"
       />

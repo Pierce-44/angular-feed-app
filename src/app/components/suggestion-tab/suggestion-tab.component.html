@@ -1,9 +1,9 @@
 <div
-  class="sticky top-[68px] bg-white rounded-[4px] w-[310px] border border-[#bdbdbd] dark:border-[#505050] dark:bg-[#1a1a1b] mt-[105px]"
+  class="lg:sticky top-[68px] bg-white rounded-[4px] lg:w-[310px] border border-[#bdbdbd] dark:border-[#505050] dark:bg-[#1a1a1b] mt-2 lg:mt-[105px]"
 >
-  <div class="relative h-20">
+  <div class="relative h-20 hidden lg:flex">
     <p
-      class="absolute bottom-0 left-0 z-20 bg-gradient-to-r font-semibold text-xl [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)] text-[#ffffff] pb-2 pl-2"
+      class="absolute bottom-0 left-0 lg:z-20 bg-gradient-to-r font-semibold text-xl [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)] text-[#ffffff] pb-2 pl-2"
     >
       Suggested Communities
     </p>
@@ -12,21 +12,26 @@
       src="https://styles.redditmedia.com/t5_2qkog/styles/bannerBackgroundImage_k547haad8zo91.png"
       alt=""
     />
-    <div class="absolute top-0 left-0 z-10 w-full h-20 bg-[#0000003a]"></div>
+    <div class="absolute top-0 left-0 lg:z-10 w-full h-20 bg-[#0000003a]"></div>
   </div>
 
   <ul>
     <li
       *ngFor="let community of communities; let i = index"
       [attr.data-index]="i"
-      class="flex items-center justify-start text-sm font-semibold px-2 py-4 {{
+      class=" items-center justify-start text-sm font-semibold px-2 py-1 lg:py-4 lg:flex inline-block {{
         i + 1 === communities.length
           ? ''
-          : 'border-[#d8d8d8] dark:border-[#505050] border-b'
+          : 'border-[#d8d8d8] dark:border-[#505050] lg:border-b'
       }}"
     >
-      <p class="pr-10 pl-4">{{ i + 1 }}</p>
-      <button (click)="getNewRoomPosts(community)">r/{{ community }}</button>
+      <p class="pr-10 pl-4 lg:flex hidden">{{ i + 1 }}</p>
+      <button
+        class="text-xs lg:text-base hover:scale-105"
+        (click)="getNewRoomPosts(community)"
+      >
+        r/{{ community }}
+      </button>
     </li>
   </ul>
 </div>

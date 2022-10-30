@@ -5,7 +5,9 @@
   (click)="closeDropDown($event)"
 >
   <app-header [(openClose)]="openClose" [(darkMode)]="darkMode"></app-header>
-  <div class="flex justify-center items-strat gap-6">
+  <div
+    class="flex justify-center mx-auto max-w-[640px] lg:max-w-none lg:gap-6 flex-col-reverse lg:flex-row"
+  >
     <ul class="max-w-[640px] w-full">
       <div class="flex items-center gap-4 py-5">
         <svg class="h-16 w-16" viewBox="0 0 20 20">
@@ -110,6 +112,14 @@
       [(community)]="community"
       [(filterFocus)]="filterFocus"
     ></app-suggestion-tab>
+  </div>
+  <div class="w-full flex items-center justify-center pb-32 pt-10">
+    <button
+      (click)="publicFetchMorePosts()"
+      class="rounded-full bg-[#FF4500] text-white py-2 px-4 animate-bounce text-lg"
+    >
+      See more
+    </button>
   </div>
   <router-outlet></router-outlet>
 </div>

@@ -23,6 +23,7 @@ export class AppComponent {
   community = 'todayilearned';
   posts!: post[];
   url = `https://www.reddit.com/r/${this.community}/hot.json?limit=25`;
+  fetchLimit = 50;
   openClose = false;
   darkMode = false;
   filterFocus = 'hot';
@@ -38,6 +39,16 @@ export class AppComponent {
     const newUrl = `https://www.reddit.com/r/${this.community}/${filter}.json?limit=25`;
 
     this.filterFocus = filter;
+    this.fetchAPIService.getPosts(newUrl).subscribe((response: any) => {
+      this.posts = response.data.children;
+    });
+  }
+
+  publicFetchMorePosts() {
+    this.fetchLimit = this.fetchLimit + 25;
+
+    const newUrl = `https://www.reddit.com/r/${this.community}/${this.filterFocus}.json?limit=${this.fetchLimit}`;
+
     this.fetchAPIService.getPosts(newUrl).subscribe((response: any) => {
       this.posts = response.data.children;
     });
