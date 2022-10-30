@@ -55,6 +55,7 @@ export class AppComponent {
     });
   }
 
+  // eslint-disable-next-line @angular-eslint/use-lifecycle-interface
   ngOnInit() {
     this.fetchAPIService.getPosts(this.url).subscribe((response: any) => {
       this.posts = response.data.children;

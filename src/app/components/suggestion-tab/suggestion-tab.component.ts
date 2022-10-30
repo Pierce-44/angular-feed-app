@@ -1,14 +1,12 @@
-/* eslint-disable @angular-eslint/no-empty-lifecycle-method */
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { post } from 'src/app/app.component';
 import { FetchAPIService } from 'src/app/services/fetch-api.service';
 
 @Component({
   selector: 'app-suggestion-tab',
   templateUrl: './suggestion-tab.component.html',
-  styleUrls: ['./suggestion-tab.component.css'],
 })
-export class SuggestionTabComponent implements OnInit {
+export class SuggestionTabComponent {
   communities = [
     'ProgrammerHumor',
     'formula1',
@@ -48,6 +46,4 @@ export class SuggestionTabComponent implements OnInit {
   }
 
   constructor(private fetchAPIService: FetchAPIService) {}
-
-  ngOnInit(): void {}
 }

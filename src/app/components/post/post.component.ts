@@ -5,7 +5,6 @@ import { comment } from '../post-thumbnail/post-thumbnail.component';
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
-  styleUrls: ['./post.component.css'],
 })
 export class PostComponent {
   @Input()
@@ -23,7 +22,6 @@ export class PostComponent {
 
   closePost() {
     this.openPostChange.emit(!this.openPost);
-    console.log(this.openPost);
   }
 
   randomColor = Math.floor(Math.random() * 16777215);

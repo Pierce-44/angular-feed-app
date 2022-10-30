@@ -1,4 +1,3 @@
-/* eslint-disable @angular-eslint/no-empty-lifecycle-method */
 import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 import { post } from 'src/app/app.component';
 import { FetchAPIService } from 'src/app/services/fetch-api.service';
@@ -15,7 +14,6 @@ export interface comment {
 @Component({
   selector: 'app-post-thumbnail',
   templateUrl: './post-thumbnail.component.html',
-  styleUrls: ['./post-thumbnail.component.css'],
 })
 export class PostThumbnailComponent implements OnInit {
   @Input()
@@ -34,16 +32,12 @@ export class PostThumbnailComponent implements OnInit {
   public setPostDetails() {
     this.openPost = true;
 
-    console.log('fire');
-
     const id = this.post.data.id;
     const subreddit = this.post.data.subreddit;
 
     const postUrl = `https://www.reddit.com/r/${subreddit}/comments/${id}.json`;
 
     this.fetchAPIService.getPosts(postUrl).subscribe((response: any) => {
-      console.log(response[1].data.children);
-
       this.postComments = response[1].data.children;
     });
   }

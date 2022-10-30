@@ -1,7 +1,7 @@
 <div
-  class="flex z-50 sticky top-0 left-0 w-full justify-between items-center px-5 py-2 dark:bg-[#1a1a1b] bg-[#1d2535] dark:border-b-[#363636] border-b-[#c9c9c9] border-b sm:bg-white"
+  class="sticky top-0 left-0 z-50 flex w-full items-center justify-between border-b border-b-[#c9c9c9] bg-[#1d2535] px-5 py-2 dark:border-b-[#363636] dark:bg-[#1a1a1b] sm:bg-white"
 >
-  <button class="flex justify-center items-center gap-2">
+  <button class="flex items-center justify-center gap-2">
     <svg class="h-8 w-8" viewBox="0 0 20 20">
       <g>
         <circle fill="#FF4500" cx="10" cy="10" r="10"></circle>
@@ -12,7 +12,7 @@
       </g>
     </svg>
     <svg
-      class="h-5 w-auto dark:fill-[#D7DADC] fill-[#D7DADC] sm:fill-[#1c1c1c]"
+      class="h-5 w-auto fill-[#D7DADC] dark:fill-[#D7DADC] sm:fill-[#1c1c1c]"
       viewBox="0 0 57 18"
     >
       <g>
@@ -40,7 +40,7 @@
   </button>
   <button
     id="headerDropDown"
-    class="flex justify-center items-center dark:hover:border-[#292929] hover:border-gray-300 border-solid dark:border-[#1a1a1b] border-[#1d2535] sm:border-white border p-1"
+    class="flex items-center justify-center border border-solid border-[#1d2535] p-1 hover:border-gray-300 dark:border-[#1a1a1b] dark:hover:border-[#292929] sm:border-white"
     (click)="openCloseDropDown()"
   >
     <svg
@@ -50,7 +50,7 @@
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
-      class="w-6 h-6"
+      class="h-6 w-6"
     >
       <path
         id="headerDropDown"
@@ -66,7 +66,7 @@
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
-      class="w-6 h-6"
+      class="h-6 w-6"
     >
       <path
         id="headerDropDown"
@@ -79,18 +79,18 @@
   <div
     *ngIf="openClose"
     id="headerDropDown"
-    class="absolute whitespace-nowrap font-semibold text-sm dark:bg-[#1a1a1b] bg-white top-[54px] right-5 border dark:border-[#292929] border-gray-200 rounded-md p-5"
+    class="absolute top-[54px] right-5 whitespace-nowrap rounded-md border border-gray-200 bg-white p-5 text-sm font-semibold dark:border-[#292929] dark:bg-[#1a1a1b]"
   >
-    <div id="headerDropDown" class="flex justify-center items-center gap-3">
+    <div id="headerDropDown" class="flex items-center justify-center gap-3">
       <p>Dark Mode</p>
       <button id="headerDropDown" (click)="setDarkMode()">
         <div
           id="headerDropDown"
-          class="relative w-12 h-6 bg-slate-200 dark:bg-[#30cfff] rounded-full"
+          class="relative h-6 w-12 rounded-full bg-slate-200 dark:bg-[#30cfff]"
         >
           <div
             id="headerDropDown"
-            class="h-5 w-5 rounded-full bg-white border border-solid border-[#929292] absolute translate-x-1 dark:translate-x-6 top-1/2 transform -translate-y-1/2 transition-all duration-300"
+            class="absolute top-1/2 h-5 w-5 translate-x-1 -translate-y-1/2 transform rounded-full border border-solid border-[#929292] bg-white transition-all duration-300 dark:translate-x-6"
           ></div>
         </div>
       </button>

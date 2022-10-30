@@ -1,16 +1,16 @@
 <div
-  class="fixed top-0 left-0 h-screen overflow-y-scroll z-50 flex items-start justify-center w-full"
+  class="fixed top-0 left-0 z-50 flex h-screen w-full items-start justify-center overflow-y-scroll"
 >
   <button
     (click)="closePost()"
-    class="fixed lg:top-14 lg:right-20 bg-gray-300 lg:bg-white dark:bg-[#000] dark:lg:bg-[#1a1a1b] z-[100] p-1 rounded-full border-black border lg:border-none"
+    class="fixed z-[100] rounded-full border border-black bg-gray-300 p-1 dark:bg-[#000] lg:top-14 lg:right-20 lg:border-none lg:bg-white dark:lg:bg-[#1a1a1b]"
   >
     <svg
       fill="none"
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
-      class="w-8 h-8"
+      class="h-8 w-8"
     >
       <path
         stroke-linecap="round"
@@ -20,9 +20,9 @@
     </svg>
   </button>
   <div
-    class="max-w-[740px] w-full bg-white dark:bg-[#1a1a1b] relative z-50 my-5 rounded-md p-4"
+    class="relative z-50 my-5 w-full max-w-[740px] rounded-md bg-white p-4 dark:bg-[#1a1a1b]"
   >
-    <div class="flex items-center gap-1 justify-start mb-4 flex-wrap">
+    <div class="mb-4 flex flex-wrap items-center justify-start gap-1">
       <svg class="h-8 w-8" viewBox="0 0 20 20">
         <g>
           <circle fill="#FF4500" cx="10" cy="10" r="10"></circle>
@@ -46,21 +46,21 @@
       <p class="font-semibold">{{ post.data.title }}</p>
       <img
         *ngIf="post.data.url.slice(-3) === 'jpg'"
-        class="h-auto w-[580px] object-cover rounded-sm"
+        class="h-auto w-[580px] rounded-sm object-cover"
         src="{{ post.data.url }}"
         alt="thumbnail"
       />
       <img
         *ngIf="thumbnail && post.data.url.slice(-3) !== 'jpg'"
-        class="h-36 w-36 object-cover rounded-sm lg:mx-0 mx-auto"
+        class="mx-auto h-36 w-36 rounded-sm object-cover lg:mx-0"
         src="{{ post.data.thumbnail }}"
         alt="thumbnail"
       />
     </div>
-    <p class="text-lg font-semibold text-[#858585] my-4">Comments:</p>
+    <p class="my-4 text-lg font-semibold text-[#858585]">Comments:</p>
     <div
       *ngIf="!postComments"
-      class="w-full flex items-center justify-center my-10"
+      class="my-10 flex w-full items-center justify-center"
     >
       <svg class="h-8 w-8 animate-ping" viewBox="0 0 20 20">
         <g>
@@ -93,9 +93,9 @@
               ></path>
             </g>
           </svg>
-          <div class="h-full w-[2px] bg-[#edeff1] mx-auto mt-1"></div>
+          <div class="mx-auto mt-1 h-full w-[2px] bg-[#edeff1]"></div>
         </div>
-        <div class="text-sm flex flex-col items-start justify-center gap-2">
+        <div class="flex flex-col items-start justify-center gap-2 text-sm">
           <p class="font-semibold">{{ comment.data.author }}</p>
           <p class="break-words">{{ comment.data.body }}</p>
           <div class="flex items-center justify-start gap-2">
@@ -104,7 +104,7 @@
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="w-4 h-4"
+              class="h-4 w-4"
             >
               <path
                 stroke-linecap="round"
@@ -118,7 +118,7 @@
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="w-4 h-4"
+              class="h-4 w-4"
             >
               <path
                 stroke-linecap="round"
@@ -132,6 +132,6 @@
     </ul>
   </div>
   <div
-    class="fixed top-0 left-0 w-[calc(100%-15px)] h-screen z-40 bg-[#00000073]"
+    class="fixed top-0 left-0 z-40 h-screen w-[calc(100%-15px)] bg-[#00000073]"
   ></div>
 </div>

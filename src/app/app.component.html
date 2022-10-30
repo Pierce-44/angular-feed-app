@@ -6,9 +6,9 @@
 >
   <app-header [(openClose)]="openClose" [(darkMode)]="darkMode"></app-header>
   <div
-    class="flex justify-center mx-auto max-w-[640px] lg:max-w-none lg:gap-6 flex-col-reverse lg:flex-row"
+    class="mx-auto flex max-w-[640px] flex-col-reverse justify-center lg:max-w-none lg:flex-row lg:gap-6"
   >
-    <ul class="max-w-[640px] w-full">
+    <ul class="w-full max-w-[640px]">
       <div class="flex items-center gap-4 py-5">
         <svg class="h-16 w-16" viewBox="0 0 20 20">
           <g>
@@ -24,7 +24,7 @@
         </p>
       </div>
       <div
-        class="font-semibold flex items-center justify-start gap-8 bg-white p-4 rounded-[4px] border border-[#bdbdbd] dark:border-[#505050] dark:bg-[#1a1a1b]"
+        class="flex items-center justify-start gap-8 rounded-[4px] border border-[#bdbdbd] bg-white p-4 font-semibold dark:border-[#505050] dark:bg-[#1a1a1b]"
       >
         <button
           (click)="setPosts('hot')"
@@ -39,7 +39,7 @@
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="w-6 h-6"
+            class="h-6 w-6"
           >
             <path
               stroke-linecap="round"
@@ -67,7 +67,7 @@
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="w-6 h-6"
+            class="h-6 w-6"
           >
             <path
               stroke-linecap="round"
@@ -91,7 +91,7 @@
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="w-6 h-6"
+            class="h-6 w-6"
           >
             <path
               stroke-linecap="round"
@@ -114,10 +114,10 @@
       [(fetchLimit)]="fetchLimit"
     ></app-suggestion-tab>
   </div>
-  <div class="w-full flex items-center justify-center pb-32 pt-10">
+  <div class="flex w-full items-center justify-center pb-32 pt-10">
     <button
       (click)="publicFetchMorePosts()"
-      class="rounded-full bg-[#FF4500] text-white py-2 px-4 animate-bounce text-lg"
+      class="animate-bounce rounded-full bg-[#FF4500] py-2 px-4 text-lg text-white"
     >
       See more
     </button>

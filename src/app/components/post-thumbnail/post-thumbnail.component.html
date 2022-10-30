@@ -9,9 +9,9 @@
   ></app-post>
   <div
     (click)="setPostDetails()"
-    class="mx-auto hover:border-[#808080] cursor-pointer dark:hover:border-[#888888] p-4 rounded-[4px] border border-[#bdbdbd] dark:border-[#505050] dark:bg-[#1a1a1b] my-2 sm:my-4 bg-white overflow-hidden"
+    class="mx-auto my-2 cursor-pointer overflow-hidden rounded-[4px] border border-[#bdbdbd] bg-white p-4 hover:border-[#808080] dark:border-[#505050] dark:bg-[#1a1a1b] dark:hover:border-[#888888] sm:my-4"
   >
-    <div class="flex items-center justify-start gap-2 mb-3">
+    <div class="mb-3 flex items-center justify-start gap-2">
       <svg
         class="h-8 w-8"
         [ngStyle]="{ color: randomColor }"
@@ -25,26 +25,26 @@
           ></path>
         </g>
       </svg>
-      <p class="font-semibold text-sm">
+      <p class="text-sm font-semibold">
         {{ post.data.author }}
       </p>
       <p class="text-xs text-[#858585]">Posted {{ timeSincePost }} hours ago</p>
     </div>
     <div
-      class="flex gap-2 justify-between items-center mb-2 sm:flex-row flex-col"
+      class="mb-2 flex flex-col items-center justify-between gap-2 sm:flex-row"
     >
-      <p class="font-semibold justify-self-start sm:justify-self-center">
+      <p class="justify-self-start font-semibold sm:justify-self-center">
         {{ post.data.title }}
       </p>
       <img
         *ngIf="thumbnail"
-        class="h-36 w-36 object-cover rounded-sm"
+        class="h-36 w-36 rounded-sm object-cover"
         src="{{ post.data.thumbnail }}"
         alt="thumbnail"
       />
     </div>
     <div
-      class="flex items-center justify-start gap-2 font-semibold text-sm text-[#858585]"
+      class="flex items-center justify-start gap-2 text-sm font-semibold text-[#858585]"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +52,7 @@
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        class="w-6 h-6"
+        class="h-6 w-6"
       >
         <path
           stroke-linecap="round"
