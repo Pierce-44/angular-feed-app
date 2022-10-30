@@ -28,6 +28,9 @@ export class SuggestionTabComponent implements OnInit {
   @Input() community: string | undefined;
   @Output() communityChange = new EventEmitter<string>();
 
+  @Input() fetchLimit: number | undefined;
+  @Output() fetchLimitChange = new EventEmitter<number>();
+
   newFetch(community: string) {}
 
   public getNewRoomPosts(community: string) {
@@ -41,6 +44,7 @@ export class SuggestionTabComponent implements OnInit {
 
     this.communityChange.emit(community);
     this.filterFocusChange.emit('hot');
+    this.fetchLimitChange.emit(25);
   }
 
   constructor(private fetchAPIService: FetchAPIService) {}
